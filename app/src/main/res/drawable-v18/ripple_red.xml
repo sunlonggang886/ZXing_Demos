@@ -1,0 +1,21 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ripple xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:color="#ff0297"
+    tools:targetApi="LOLLIPOP"
+    >
+    <!--Ripple标签，android5.0加的属性，即对应一个RippleDrawable，当它被设置为一个控件的background属性时，控件在按下时，即会显示水波效果
+     tools:targetApi:假设minSdkLevel 15，而你使用了api21中的控件比如RippleDrawable
+     tools:ignore:Lint会提示该ImageView缺少android:contentDescription属性。我们可以使用tools:ignore来忽略这个警告：
+      tools的最基本用法-覆盖android的属性，然后介绍了忽略Lint提示的属性
+      默认情况下res/values/strings.xml中的字符串会执行拼写检查，如果不是英语，会提示拼写错误，通过以下代码来告诉studio本地语言不是英语，就不会有提示了。
+      tools:locale="it"
+      RippleDrawable 就是一个自定义触摸反馈动画。是在 Android 5.0 时推出的动画效果。为了兼容低版本，可以在将 <ripple> 元素定义在 drawable-v18 目录下；
+    -->
+    <!--用颜色作为Mask的Ripple,如果在一个ripple标签中，添加一个item，其id为@android:id/mask，drawable属性为引用的颜色(color) ，则水波效果会限定在drawable对应的RippleDrawable本身矩形区域内部-->
+    <item android:id="@android:id/mask"
+        android:drawable="@android:color/white" />
+    <!--用图片作为Mask的Ripple-->
+    <item android:id="@android:id/mask"
+        android:drawable="@drawable/dhjk" />
+</ripple>
